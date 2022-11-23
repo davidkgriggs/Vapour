@@ -1,0 +1,72 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ItemFilterQuickPreset" TargetType="CheckBoxEx">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="CheckBoxEx">
+                    <Grid Background="Transparent"
+                            Margin="15,0,15,0">
+                        <Border x:Name="VerticalBubble" Background="{TemplateBinding Background}" CornerRadius="10" Margin="1" Visibility="Collapsed"/>
+                        <Border x:Name="VerticalBubbleFocus" Background="#FFFFFF" CornerRadius="10" Visibility="Collapsed"/>
+                        <TextBlock Style="{DynamicResource TextBlockBaseStyle}" FontSize="22" FontWeight="SemiBold" Foreground="#e0e4e7"
+                                   x:Name="TextContent">                            
+                            <Grid Margin="10,5,10,5">                                
+                                <TextBlock Text="{Binding Name}" FontFamily="Segoe UI" Visibility="Hidden" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Name}" HorizontalAlignment="Center"/>
+                                </StackPanel>                                
+                            </Grid>
+                        </TextBlock>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="VerticalBubble"/>
+                            <Setter Property="Visibility" Value="Visible" TargetName="VerticalBubbleFocus"/>
+                            <Setter Property="Foreground" Value="#282c34" TargetName="TextContent" />
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Visibility" Value="Visible" TargetName="VerticalBubble"/>
+                            <Setter Property="Foreground" Value="#282c34" TargetName="TextContent"/>
+                            <Setter Property="FontFamily" Value="Segoe UI Semibold" TargetName="TextContent" />
+                            <Setter Property="Visibility" Value="Visible" TargetName="VerticalBubbleFocus"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type FilterPresetSelector}">
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type FilterPresetSelector}">
+                    <ItemsControlEx x:Name="PART_ItemsFilterPresets" Focusable="False" AlternationCount="{Binding Items.Count, RelativeSource={RelativeSource Self}}"
+                                    KeyboardNavigation.DirectionalNavigation="Once"
+                                    HorizontalLayout="True">
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.Template>
+                            <ControlTemplate>
+                                <ScrollViewer Focusable="False"
+                                              HorizontalScrollBarVisibility="Hidden"
+                                              VerticalScrollBarVisibility="Disabled"
+                                              CanContentScroll="True">
+                                    <ItemsPresenter />
+                                </ScrollViewer>
+                            </ControlTemplate>
+                        </ItemsControl.Template>
+                    </ItemsControlEx>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,293 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    mc:Ignorable="d">
+
+    <sys:Boolean x:Key="RoundedCorners">true</sys:Boolean>
+    <sys:Boolean x:Key="DropShadows">true</sys:Boolean>
+    <sys:Boolean x:Key="MainScreenLogo">true</sys:Boolean>
+
+    <Color x:Key="BlackColor">#FF000000</Color>
+    <Color x:Key="WhiteColor">#FFFFFFFF</Color>
+    
+	<!--C1--><Color x:Key="ControlBackgroundColor">#212121</Color><!--C1-->
+    <!--C2--><Color x:Key="ControlBackgroundColorDark">#101010</Color><!--C2-->
+    <!--C3--><Color x:Key="UIColour">#C9F5FF</Color><!--C3-->
+    <!--C4--><Color x:Key="UIColourDark">#51B0E5</Color><!--C4-->
+	<!--C5--><Color x:Key="GlyphColor">#34ACBC</Color><!--C5-->
+	<!--C6--><Color x:Key="GlyphLightColor">#85C3CF</Color><!--C6-->
+    <!--C7--><Color x:Key="SelectionLightColor">#7A7D84</Color><!--C7-->
+    <!--C8--><Color x:Key="UIColourDarker">#2177A7</Color><!--C8-->
+
+    <Color x:Key="ControlBackgroundColorLight">#e0e0e0</Color>
+
+    <Color x:Key="TextColor">#f5f5f5</Color>
+    <Color x:Key="TextColorDarker">#a5a5a5</Color>
+    <Color x:Key="TextColorDark">#282828</Color>
+
+    <SolidColorBrush x:Key="TextBrush" Color="{DynamicResource TextColor}" />
+    <SolidColorBrush x:Key="TextBrushDarker" Color="{DynamicResource TextColorDarker}" />
+    <SolidColorBrush x:Key="TextBrushDark" Color="{DynamicResource TextColorDark}" />
+    <SolidColorBrush x:Key="GlyphBrush" Color="{DynamicResource GlyphColor}" />
+    <SolidColorBrush x:Key="GlyphLightBrush" Color="{DynamicResource GlyphLightColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="{DynamicResource ControlBackgroundColor}" />
+    <SolidColorBrush x:Key="ControlBackgroundDarkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+    <SolidColorBrush x:Key="SelectionLightBrush" Color="{DynamicResource SelectionLightColor}" />
+    <SolidColorBrush x:Key="OverlayBrush" Color="{DynamicResource OverlayColor}" />
+    <SolidColorBrush x:Key="CheckBoxCheckMarkBkBrush" Color="{DynamicResource ControlBackgroundColorDark}" />
+
+    <sys:Double x:Key="FontSizeSmall">18</sys:Double>
+    <sys:Double x:Key="FontSize">22</sys:Double>
+
+    <sys:Double x:Key="FilterPanelWidth">300</sys:Double>
+    
+    <Style x:Key="TextBlockBaseStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize}" />
+        <Setter Property="FontFamily" Value="Segoe UI Light" />
+        <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+    </Style>
+
+    <LinearGradientBrush x:Key="MainBackgourndBrush" StartPoint="0,0" EndPoint="1,1" >
+        <GradientStop Color="#313d53" Offset="0"/>
+        <GradientStop Color="#2d333c" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TopBarBackgroundBrush" StartPoint="-0.5,0.5" EndPoint="1,0.5" >
+        <GradientStop Color="#FF091F51" Offset="0"/>
+        <GradientStop Color="#AA0B1027" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BottomBarBackgroundBrush" StartPoint="-0.5,0.5" EndPoint="1.5,1" >
+        <GradientStop Color="#FF091F51" Offset="0"/>
+        <GradientStop Color="#AA0B1027" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OverlayMenuBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,1.5" >
+        <GradientStop Color="#313d53" Offset="0"/>
+        <GradientStop Color="#2d333c" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="SelectionBrush" StartPoint="0.5,-0.5" EndPoint="1,1.5" >
+        <GradientStop Color="{DynamicResource GlyphColor}" Offset="0"/>
+        <GradientStop Color="{DynamicResource GlyphLightColor}" Offset="1.0"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GameDetailsBackgroundBrush" StartPoint="0.5,0" EndPoint="0.5,0.4" >
+        <GradientStop Color="#00091F51" Offset="0.0"/>
+        <GradientStop Color="#EE0B1027" Offset="0.8"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackgroundImageMask" StartPoint="0.5,0" EndPoint="0.5,1" >
+        <GradientStop Color="#000000" Offset="0.05"/>
+        <GradientStop Color="#000000" Offset="0.1"/>
+        <GradientStop Color="#000000" Offset="0.5"/>
+        <GradientStop Color="#00000000" Offset="0.55"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="OverlayTitle" StartPoint="0.5,0" EndPoint="0.5,1" >
+        <GradientStop Color="#00000000" Offset="0.35"/>
+        <GradientStop Color="#D9000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackgroundVerticalFade" StartPoint="0.5,0" EndPoint="0.5,1" >
+        <GradientStop Color="#000000" Offset="0.9"/>
+        <GradientStop Color="#00000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="BackgroundHorizontalFade" StartPoint="0,0.5" EndPoint="1,0.5" >
+        <GradientStop Color="#00000000" Offset="0"/>
+        <GradientStop Color="#000000" Offset="0.02"/>
+        <GradientStop Color="#000000" Offset="0.98"/>
+        <GradientStop Color="#00000000" Offset="1"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="TrailerVerticalFade" StartPoint="0.5,0" EndPoint="0.5,1" >
+        <GradientStop Color="#000000" Offset="0.5"/>
+        <GradientStop Color="#00000000" Offset="0.6"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GameDetailsOverlay" StartPoint="0,0.5" EndPoint="1,0">
+        <GradientStop Color="#D9000000" Offset="0"/>
+        <GradientStop Color="#00000000" Offset="1" />
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="GameDetailsVerticalFade" StartPoint="0.5,0" EndPoint="0.5,1" >
+        <GradientStop Color="#00000000" Offset="0.5"/>
+        <GradientStop Color="#80000000" Offset="0.6"/>
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="WarningBrush" Color="#ff6b6b" />
+
+    <!--CornerRadiusLarge-->
+    <Style x:Key="CornerRadiusLarge" TargetType="Border">
+        <!--CR--><Setter Property="CornerRadius" Value="15"/><!--CR-->
+    </Style>
+    <!--MainScreenTitleStyle-->
+    <Style x:Key="MainScreenTitleStyle" TargetType="Grid">
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=LogoImage, Path=ActualHeight}" Value="0">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--MainScreenTitleStyle-->
+    <Style x:Key="MainScreenTitleStyle1" TargetType="Grid">
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ElementName=LogoImage1, Path=ActualHeight}" Value="0">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!--MainScreenLogoStyle-->
+    <Style x:Key="MainScreenLogoStyle" TargetType="Grid">
+        <Setter Property="Visibility" Value="Collapsed"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                <Setter Property="Visibility" Value="Visible"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <!-- CoverBorder -->
+    <Style x:Key="AnimatedCoverBrush" TargetType="Border">
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{DynamicResource UIColourDarker}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource UIColourDarker}" Offset="0.80"/>
+                    <GradientStop Color="{DynamicResource UIColour}" Offset="1"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" />
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="15"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="StartCoverBrush">
+                        <Storyboard>
+                            <ThicknessAnimationUsingKeyFrames Storyboard.TargetProperty="Margin" BeginTime="00:00:00">
+                                <SplineThicknessKeyFrame KeyTime="00:00:00" Value="0" />
+                                <SplineThicknessKeyFrame KeyTime="00:00:00.3" Value="-6" />
+                            </ThicknessAnimationUsingKeyFrames>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
+											 From="0" To="359" Duration="00:00:4" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <StopStoryboard BeginStoryboardName="StartCoverBrush" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="AnimatedBorderBrush" TargetType="Border">
+        <Setter Property="BorderBrush">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="{DynamicResource UIColourDarker}" Offset="0"/>
+                    <GradientStop Color="{DynamicResource UIColour}" Offset="1"/>
+                    <LinearGradientBrush.RelativeTransform>
+                        <RotateTransform CenterX="0.5" CenterY="0.5" x:Name="RotateBrush" />
+                    </LinearGradientBrush.RelativeTransform>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderThickness" Value="4"/>
+        <Setter Property="Margin" Value="-1"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="StartBorderBrush">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" BeginTime="0:0:0.1" Duration="0:0:0.3" />
+                            <DoubleAnimation Storyboard.TargetProperty="(Border.BorderBrush).(Brush.RelativeTransform).(RotateTransform.Angle)" 
+											 From="0" To="359" Duration="00:00:4" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" Duration="0:0:0" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                    <StopStoryboard BeginStoryboardName="StartBorderBrush" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="AnimatedFlashCover" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00000000 " Offset="0"/>
+                    <GradientStop Color="#40ffffff" Offset="0.01"/>
+                    <GradientStop Color="#40ffffff" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CornerRadius" Value="15"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="StartCoverFlash">
+                        <Storyboard RepeatBehavior="Forever" Duration="0:0:4.5">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.0" />
+                            <DoubleAnimation
+							Storyboard.TargetProperty="Background.(GradientBrush.GradientStops)[1].(GradientStop.Offset)"
+							From="0" To="1" BeginTime="0:0:0" Duration="0:0:0.6" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.6" Duration="0:0:0.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="StartCoverFlash" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="AnimatedFlashMenu" TargetType="Border">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush>
+                    <GradientStop Color="#00000000 " Offset="0"/>
+                    <GradientStop Color="#40ffffff" Offset="1"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                <DataTrigger.EnterActions>
+                    <BeginStoryboard Name="StartFlashMenu">
+                        <Storyboard RepeatBehavior="1x">
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" Duration="0:0:0.1" />
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="1" To="0" BeginTime="0:0:0.1" Duration="0:0:0.5" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </DataTrigger.EnterActions>
+                <DataTrigger.ExitActions>
+                    <StopStoryboard BeginStoryboardName="StartFlashMenu" />
+                </DataTrigger.ExitActions>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>

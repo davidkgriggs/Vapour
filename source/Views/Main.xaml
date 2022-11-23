@@ -1,0 +1,1073 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                    xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                    mc:Ignorable="d">
+
+    <Style TargetType="{x:Type Main}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Main}">
+                    <Grid x:Name="PART_MainHost"
+                          d:DesignWidth="{StaticResource DesignWidth}"
+                          d:DesignHeight="{StaticResource DesignHeight}"
+                          d:DataContext="{x:Static DesignMainViewModel.DesignIntance}">
+                        <Grid x:Name="PART_ViewHost" Background="{DynamicResource MainBackgourndBrush}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Border x:Name="BackgroundImageMask" Margin="-5000,0,0,0" Background="{DynamicResource BackgroundImageMask}" Width="{StaticResource DesignWidth}" VerticalAlignment="Stretch"/>
+                            
+                            <FadeImage x:Name="PART_ImageBackground" Grid.RowSpan="3"
+                                       HorizontalAlignment="Center" VerticalAlignment="Top"/>
+
+                            <FadeImage x:Name="PART_ImageBackground2" Grid.RowSpan="3"
+                                       HorizontalAlignment="Center" VerticalAlignment="Top"
+                                       Source="{Binding ElementName=PART_ImageBackground,Path=Source}">
+                                <FadeImage.OpacityMask>
+                                    <VisualBrush Visual="{Binding ElementName=BackgroundImageMask}" RenderOptions.BitmapScalingMode="Fant" Stretch="Fill"/>
+                                </FadeImage.OpacityMask>
+                                <FadeImage.Style>
+                                    <Style TargetType="FadeImage">
+                                        <Setter Property="Visibility" Value="Visible"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageBlurAmount}" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </FadeImage.Style>
+                            </FadeImage>
+
+                            <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.RowSpan="3" Background="Black">
+                                <Border.Style>
+                                    <Style TargetType="Border">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageBlurAmount}" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="0.0">
+                                                <Setter Property="Opacity" Value="0"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="5.0">
+                                                <Setter Property="Opacity" Value="0.05"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="10.0">
+                                                <Setter Property="Opacity" Value="0.1"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="15.0">
+                                                <Setter Property="Opacity" Value="0.15"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="20.0">
+                                                <Setter Property="Opacity" Value="0.2"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="25.0">
+                                                <Setter Property="Opacity" Value="0.25"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="30.0">
+                                                <Setter Property="Opacity" Value="0.3"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="35.0">
+                                                <Setter Property="Opacity" Value="0.35"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="40.0">
+                                                <Setter Property="Opacity" Value="0.4"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="45.0">
+                                                <Setter Property="Opacity" Value="0.45"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="50.0">
+                                                <Setter Property="Opacity" Value="0.5"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="55.0">
+                                                <Setter Property="Opacity" Value="0.55"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="60.0">
+                                                <Setter Property="Opacity" Value="0.6"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="65.0">
+                                                <Setter Property="Opacity" Value="0.65"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="70.0">
+                                                <Setter Property="Opacity" Value="0.7"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="75.0">
+                                                <Setter Property="Opacity" Value="0.75"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="80.0">
+                                                <Setter Property="Opacity" Value="0.8"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="85.0">
+                                                <Setter Property="Opacity" Value="0.85"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="90.0">
+                                                <Setter Property="Opacity" Value="0.9"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="95.0">
+                                                <Setter Property="Opacity" Value="0.95"/>
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Settings Fullscreen.MainBackgroundImageDarkAmount}" Value="100.0">
+                                                <Setter Property="Opacity" Value="1"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                            </Border>
+
+                            <Grid Grid.Row="0" Background="Transparent"
+                                  Height="60">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="50" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="1" Orientation="Horizontal">
+                                    <StackPanel Grid.Column="1" x:Name="PART_ElemSearchActive"
+                                            VerticalAlignment="Center" HorizontalAlignment="Stretch" Orientation="Horizontal"
+                                            Margin="0,0,0,0">
+                                        <TextBlock  FontSize="12"                                                
+                                                TextAlignment="Center"
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{DynamicResource LOCGameListSearchResults}"/>
+                                        <TextBlock  Foreground="White" Margin="5,0,0,0"
+                                                TextAlignment="Center" FontSize="12"    
+                                                Style="{DynamicResource TextBlockBaseStyle}"
+                                                Text="{Binding AppSettings.Fullscreen.FilterSettings.Name}"/>
+                                    </StackPanel>
+
+                                    <TextBlock Grid.Column="1" x:Name="PART_ElemExtraFilterActive"
+                                       FontSize="12"
+                                       VerticalAlignment="Center" HorizontalAlignment="Stretch"
+                                       TextAlignment="Center"
+                                       Style="{DynamicResource TextBlockBaseStyle}"
+                                       Text="{DynamicResource LOCGameListExtraFiltered}"/>
+
+                                    <StackPanel x:Name="PART_ElemProgressIndicator" Orientation="Horizontal"
+                                        Grid.Column="3" VerticalAlignment="Center">
+                                        <TextBlock x:Name="PART_TextProgressTooltip" 
+                                           Margin="20,0,15,0" FontSize="12" VerticalAlignment="Center"
+                                           Style="{DynamicResource TextBlockBaseStyle}"/>
+                                        <ContentControl Style="{DynamicResource ProgressIndicator}" Focusable="False"
+                                                Height="15" Width="15" VerticalAlignment="Center" />
+                                    </StackPanel>
+                                </StackPanel>
+                                
+
+                                <ContentControl x:Name="PART_ElemBatteryStatus" Focusable="False" FontSize="42"
+                                            VerticalAlignment="Center" Margin="10,0,10,0"
+                                            Grid.Column="2">
+                                    <ContentControl.Style>
+                                        <Style TargetType="ContentControl">
+                                            <Setter Property="Foreground" Value="{DynamicResource TextBrush}" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Critical">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusCritical}" />
+                                                    <Setter Property="Foreground" Value="Red" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Low">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusLow}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="Medium">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusMedium}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.Charge}" Value="High">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusHigh}" />
+                                                </DataTrigger>
+                                                <DataTrigger Binding="{Binding PowerStatus.IsCharging}" Value="True">
+                                                    <Setter Property="Content" Value="{DynamicResource BatteryStatusCharging}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </ContentControl.Style>
+                                </ContentControl>
+
+                                <TextBlock x:Name="PART_TextBatteryPercentage" Style="{DynamicResource TextBlockBaseStyle}"
+                                       VerticalAlignment="Center" Margin="0,0,20,0"
+                                       Grid.Column="3"/>
+
+                                <ButtonEx x:Name="PART_ButtonProgramUpdate" VerticalAlignment="Center"
+                                          Margin="10,0,10,0" Height="48" MinWidth="48"
+                                          Style="{DynamicResource ButtonTopMenu}"                                          
+                                          Grid.Column="4">
+                                    <ButtonEx.Content>
+                                        <TextBlock Text="&#xef08;" FontFamily="{StaticResource FontIcoFont}"                                                   
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
+                                                   Foreground="{DynamicResource GlyphLightBrush}" FontSize="30" />
+                                    </ButtonEx.Content>
+                                </ButtonEx>
+
+                                <ButtonEx x:Name="PART_ButtonNotifications" VerticalAlignment="Center"
+                                          Margin="10,0,10,0" Height="48" MinWidth="48"
+                                          Grid.Column="5">
+                                    <Button.Content>
+                                        <Grid>
+                                            <TextBlock Text="&#xeea3;" FontFamily="{StaticResource FontIcoFont}"
+                                                       HorizontalAlignment="Center" VerticalAlignment="Center" Margin="2"
+                                                       Foreground="White" FontSize="30" />
+                                            <TextBlock Text="&#x25CF;" Foreground="{DynamicResource GlyphBrush}"
+                                                       HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                                       FontSize="24" Margin="0,0,5,0" />
+                                        </Grid>
+                                    </Button.Content>
+                                    <Button.Style>
+                                        <Style TargetType="Button" BasedOn="{StaticResource ButtonTopMenu}">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Api Notifications.Count}" Value="0">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Button.Style>
+                                </ButtonEx>
+
+                                <CheckBoxEx x:Name="ChangeViewButton" IsChecked="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Grid.Column="6" Margin="10,0,10,0"
+                                            Style="{DynamicResource ChangeViewButton}"/>
+
+                                <ButtonEx x:Name="PART_ButtonMainMenu" VerticalAlignment="Center"
+                                          Style="{DynamicResource ButtonTopMenu}"
+                                          Margin="10,0,10,0" Height="48" MinWidth="48"
+                                          Grid.Column="7">
+                                    <Button.Content>
+                                        <Grid>
+                                            <Image RenderOptions.BitmapScalingMode="Fant" Margin="2" Source="{ThemeFile 'Images/applogo_clean.png'}"/>
+                                            <Image RenderOptions.BitmapScalingMode="Fant" Margin="2" Source="{ThemeFile 'Images/applogo_clean_dark.png'}">
+                                                <Image.Style>
+                                                    <Style TargetType="Image">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                        <Style.Triggers>
+                                                                <DataTrigger Binding="{Binding ElementName=PART_ButtonMainMenu,Path=IsFocused}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                                <DataTrigger Binding="{Binding ElementName=PART_ButtonMainMenu,Path=IsMouseOver}" Value="True">
+                                                                <Setter Property="Visibility" Value="Visible"/>
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </Image.Style>
+                                            </Image>
+                                        </Grid>
+                                    </Button.Content>
+                                </ButtonEx>
+
+                                <TextBlock x:Name="PART_TextClock" Style="{DynamicResource TextBlockBaseStyle}"
+                                       VerticalAlignment="Center" Margin="20,0,0,0"
+                                       Grid.Column="8"/>
+                            </Grid>
+
+                            <DockPanel Grid.Row="1">
+                                <DockPanel.Style>
+                                    <Style TargetType="DockPanel">
+                                        <Setter Property="Margin" Value="0,0,0,60"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="False">
+                                                <Setter Property="Margin" Value="0,60,0,-50" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </DockPanel.Style>
+                                <Filters x:Name="PART_ElemFilters"
+                                         DockPanel.Dock="Left" Focusable="False" />                                
+
+                                <FiltersAdditional x:Name="PART_ElemFiltersAdditional"
+                                                   DockPanel.Dock="Left" Focusable="False" />
+
+                                <ContentControl x:Name="PART_ContentFilterItems"
+                                            DockPanel.Dock="Left" Focusable="False" />
+                                
+                                <StackPanel x:Name="ListItems" DockPanel.Dock="Right" VerticalAlignment="Bottom">
+                                    <Grid Grid.Column="0" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Top" Tag="{DynamicResource DropShadows}" Background="Transparent">
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Margin" Value="50,0,0,0"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout}" Value="False">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="true">
+                                                        <Setter Property="Effect">
+                                                            <Setter.Value>
+                                                                <DropShadowEffect BlurRadius="10" />
+                                                            </Setter.Value>
+                                                        </Setter>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+                                        <StackPanel>
+                                            <Grid Tag="{DynamicResource MainScreenLogo}" Style="{DynamicResource MainScreenTitleStyle}" Height="120">
+                                                <TextBlock HorizontalAlignment="Left" Style="{DynamicResource TextBlockBaseStyle}" VerticalAlignment="Bottom"
+                                                                           Text="{Binding SelectedGame.DisplayName}"
+                                                                           FontWeight="Bold"
+                                                                           TextWrapping="WrapWithOverflow" 
+                                                                           FontSize="56" Margin="0,0,0,10">
+                                                </TextBlock>
+                                            </Grid>
+
+                                            <Grid Tag="{DynamicResource MainScreenLogo}" Style="{DynamicResource MainScreenLogoStyle}" Margin="0,0,0,0" DockPanel.Dock="Top">
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                                                    <StackPanel.Style>
+                                                        <Style TargetType="StackPanel">
+                                                            <Setter Property="MaxHeight" Value="160"/>
+                                                            <Style.Triggers>
+                                                                <DataTrigger Binding="{PluginSettings Plugin=ExtraMetadataLoader, Path=IsLogoAvailable, FallbackValue=True}" Value="False">
+                                                                    <Setter Property="MaxHeight" Value="160" />
+                                                                </DataTrigger>
+                                                            </Style.Triggers>
+                                                        </Style>
+                                                    </StackPanel.Style>
+                                                    <!--Extra Metadata Tools Logo-->
+                                                    <StackPanel Name="Icon" Orientation="Vertical">
+                                                        <ContentControl x:Name="ExtraMetadataLoader_LogoLoaderControl" MaxHeight="160"/>
+                                                    </StackPanel>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <Grid  Tag="{DynamicResource DescriptionOnOff}" Style="{DynamicResource DscriptionOnOffStyle}">
+                                                <StackPanel Orientation="Horizontal" DockPanel.Dock="Top" Margin="0,10,0,15">
+                                                    <StackPanel Orientation="Horizontal" Margin="0,1,20,0" Tag="{Binding SelectedGame.Favorite}" >
+                                                        <StackPanel.Style>
+                                                            <Style TargetType="StackPanel">
+                                                                <Setter Property="Visibility" Value="Collapsed"/>
+                                                                <Style.Triggers>
+                                                                    <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=Tag}" Value="True">
+                                                                        <Setter Property="Visibility" Value="Visible" />
+                                                                    </DataTrigger>
+                                                                </Style.Triggers>
+                                                            </Style>
+                                                        </StackPanel.Style>
+                                                        <TextBlock FontFamily="{DynamicResource FontIcoFont}" Text="&#xef25;" FontSize="25" Foreground="White"/>
+                                                    </StackPanel>
+                                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.Platforms[0]}" Margin="0,0,20,0"/>
+                                                    <TextBlock Style="{DynamicResource TextBlockBaseStyle}"
+                                               Text="{Binding SelectedGame.ReleaseYear}" Margin="0,0,20,0"/>
+
+                                                    <!-- Features -->
+                                                    <ItemsControlEx ItemsSource="{Binding SelectedGame.Features}"
+                                                    VerticalAlignment="Bottom" HorizontalAlignment="Left"
+                                                    Margin="0,0,0,0"
+                                                    IsTabStop="False" IsEnabled="False">
+                                                        <ItemsControlEx.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <StackPanel Orientation="Horizontal" Height="Auto"/>
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControlEx.ItemsPanel>
+                                                        <ItemsControlEx.ItemTemplate>
+                                                            <DataTemplate>
+                                                                <Grid Margin="3,0,3,5">
+                                                                    <Grid.ColumnDefinitions>
+                                                                        <ColumnDefinition Width="auto" />
+                                                                    </Grid.ColumnDefinitions>
+                                                                    <Image Grid.Column="0" x:Name="FeatureIconImage"
+                                                   RenderOptions.BitmapScalingMode="Fant"
+                                                   SnapsToDevicePixels="True"
+                                                   Height="20" VerticalAlignment="Bottom"
+                                                   Source="{ThemeFileBinding Name, PathFormat='Images/Features/{0}.png'}" />
+                                                                </Grid>
+
+                                                                <DataTemplate.Triggers>
+                                                                    <DataTrigger Binding="{Binding ElementName=FeatureIconImage, Path=Source}" Value="{x:Null}">
+                                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                                    </DataTrigger>
+                                                                </DataTemplate.Triggers>
+                                                            </DataTemplate>
+                                                        </ItemsControlEx.ItemTemplate>
+                                                    </ItemsControlEx>
+                                                </StackPanel>
+                                            </Grid>
+
+                                            <!--Grid HorizontalAlignment="Left" Width="800" MaxHeight="105" Tag="{DynamicResource DescriptionOnOff}" Style="{DynamicResource DscriptionOnOffStyle}">
+                                                <HtmlTextView Focusable="False" HtmlText="{Binding SelectedGame.Description}" HtmlFontSize="{DynamicResource FontSizeSmall}" HtmlForeground="{DynamicResource TextColor}"/>
+                                            </Grid-->
+                                        </StackPanel>
+                                    </Grid>
+
+                                    
+
+                                    <!-- Age Ratings -->
+                                    <!--ItemsControlEx ItemsSource="{Binding SelectedGame.AgeRatings}"
+                                        VerticalAlignment="Bottom" HorizontalAlignment="Right"
+                                        IsTabStop="False" IsEnabled="False">
+                                        <ItemsControlEx.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <StackPanel Orientation="Horizontal" Height="Auto"/>
+                                            </ItemsPanelTemplate>
+                                        </ItemsControlEx.ItemsPanel>
+                                        <ItemsControlEx.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Border x:Name="RatingIcon" Background="White" CornerRadius="3"
+                                                HorizontalAlignment="Center" VerticalAlignment="Center"
+                                                Height="30"
+                                                Width="Auto"
+                                                Margin="1.5" Visibility="Visible">
+                                                        <Image Grid.Column="0" x:Name="RatingIconImage"
+                                                   RenderOptions.BitmapScalingMode="Fant"
+                                                   SnapsToDevicePixels="True"
+                                                   Margin="1.5"
+                                                   Source="{ThemeFileBinding Name, PathFormat='Images/AgeRatings/{0}.png'}" />
+                                                    </Border>
+                                                </Grid>
+
+                                                <DataTemplate.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=RatingIconImage, Path=Source}" Value="{x:Null}">
+                                                        <Setter Property="Visibility" Value="Collapsed"/>
+                                                    </DataTrigger>
+                                                </DataTemplate.Triggers>
+                                            </DataTemplate>
+                                        </ItemsControlEx.ItemTemplate>
+                                    </ItemsControlEx-->
+                                    
+                                    <ListBoxEx x:Name="PART_ListGameItems"
+                                           FocusVisualStyle="{x:Null}"
+										   HorizontalAlignment="Left"			
+										   BorderThickness="0"
+                                           VirtualizingPanel.IsContainerVirtualizable="True"     
+                                           VirtualizingPanel.IsVirtualizing="True"
+                                           KeyboardNavigation.DirectionalNavigation="Once"
+                                           ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                                        <ListBox.Style>
+                                            <Style TargetType="ListBoxEx">
+                                                <Setter Property="Margin" Value="0,0,0,0" />
+                                                <Setter Property="VerticalAlignment" Value="Bottom"/>
+                                                <Setter Property="Background" Value="Transparent" />
+                                                <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Hidden"/>
+                                                <Setter Property="Focusable" Value="True"/>
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding ElementName=PART_ElemFilters, Path=Visibility}" Value="Visible">
+                                                        <Setter Property="Focusable" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding ElementName=PART_ElemFiltersAdditional, Path=Visibility}" Value="Visible">
+                                                        <Setter Property="Focusable" Value="False"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger Binding="{Binding ElementName=PART_ContentFilterItems, Path=Visibility}" Value="Visible">
+                                                        <Setter Property="Focusable" Value="False"/>
+                                                    </DataTrigger>
+
+                                                    <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="False">
+                                                        <Setter Property="Margin" Value="25,0,25,0" />
+                                                        <Setter Property="MaxHeight" Value="900"/>
+                                                    </DataTrigger>
+
+                                                    <!--Game Grid Heights-->
+                                                    <!--27:38-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="660" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="580" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="500" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="440" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="400" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="38"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="360" />
+                                                    </MultiDataTrigger>
+
+                                                    <!--3:4-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="630" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="560" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="470" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="410" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="370" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="4"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="330" />
+                                                    </MultiDataTrigger>
+
+                                                    <!--22:31-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="660" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="580" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="500" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="440" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="400" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="31"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="360" />
+                                                    </MultiDataTrigger>
+
+                                                    <!--1:1-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="550" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="550" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="550" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="550" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="520" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="440" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="360" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="320" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="280" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="1"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="260" />
+                                                    </MultiDataTrigger>
+
+                                                    <!--92:43-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="470" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="470" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="470" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="370" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="320" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="270" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="240" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="210" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="180" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="43"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="140" />
+                                                    </MultiDataTrigger>
+
+                                                    <!--2:3-->
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="1"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="2"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="3"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="4"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="690" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="5"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="660" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="6"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="600" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="7"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="500" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="8"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="440" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="9"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="400" />
+                                                    </MultiDataTrigger>
+                                                    <MultiDataTrigger>
+                                                        <MultiDataTrigger.Conditions>
+                                                            <Condition Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="True"/>
+                                                            <Condition Binding="{Settings Fullscreen.Columns}" Value="10"/>
+                                                            <Condition Binding="{Settings GridItemHeightRatio}" Value="3"/>
+                                                        </MultiDataTrigger.Conditions>
+                                                        <Setter Property="Height" Value="360" />
+                                                    </MultiDataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </ListBox.Style>
+                                    </ListBoxEx>
+                                </StackPanel>
+                            </DockPanel>
+
+                            <Grid Grid.Row="1">
+                                <Grid.Style>
+                                    <Style TargetType="Grid">
+                                        <Setter Property="VerticalAlignment" Value="Bottom"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Settings Fullscreen.HorizontalLayout, Mode=TwoWay}" Value="False">
+                                                <Setter Property="VerticalAlignment" Value="Top"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Grid.Style>
+                                <!--Grid HorizontalAlignment="Left" Margin="50,10,0,0" Height="50">
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                    <ContentControl ContentTemplate="{DynamicResource ButtonPromptLB}" Height="40" Focusable="False"
+                                                        Foreground="#FFEBEBEB" VerticalAlignment="Center" Margin="0,0,20,5"/>
+                                </>
+
+                                <Grid HorizontalAlignment="Right" Margin="0,10,50,0" Height="50">
+                                    <Grid.Style>
+                                        <Style TargetType="Grid">
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding ElementName=ChangeViewButton, Path=IsChecked}" Value="True">
+                                                    <Setter Property="Visibility" Value="Collapsed"/>
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Grid.Style>
+                                    <ContentControl ContentTemplate="{DynamicResource ButtonPromptRB}" Height="40" Focusable="False"
+                                                        Foreground="#FFEBEBEB" VerticalAlignment="Center" Margin="20,0,0,5"/>
+                                </Grid-->
+
+                                <FilterPresetSelector x:Name="PART_FilterPresetSelector" Grid.Column="1" Margin="50,0,50,0" HorizontalAlignment="Center"/>
+                            </Grid>
+
+                            <TextBlock Grid.Row="1" FontSize="40"
+                                       Text="{DynamicResource LOCNoGamesFound}"
+                                       TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock" BasedOn="{StaticResource TextBlockBaseStyle}">
+                                        <Setter Property="Visibility" Value="Collapsed" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Items.Count, ElementName=PART_ListGameItems}" Value="0">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+                            </TextBlock>
+
+                            <Grid Grid.Row="2" Background="Transparent"
+                              Height="100">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="2" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,20">
+                                    <!--Install-->
+                                    <ButtonEx x:Name="PART_ButtonInstall"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCInstallGame}" />
+                                    <!--Play-->
+                                    <ButtonEx x:Name="PART_ButtonPlay"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCPlayGame}" />
+                                    <!--Details-->
+                                    <ButtonEx x:Name="PART_ButtonDetails"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCGameDetails}" />
+                                    <!--Options-->
+                                    <ButtonEx x:Name="PART_ButtonGameOptions"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCGameOptions}" />
+                                    <!--Search-->
+                                    <ButtonEx x:Name="PART_ButtonSearch"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCSearchLabel}" />
+                                    <!--Filter-->
+                                    <ButtonEx x:Name="PART_ButtonFilter"
+                                              Style="{DynamicResource ButtonBottomMenu}"
+                                              Content="{DynamicResource LOCFilter}" />
+                                </StackPanel>
+
+                                
+                            </Grid>
+                        </Grid>
+
+                        <GameDetails x:Name="PART_ElemGameDetails" Grid.RowSpan="3"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+                        <GameStatus x:Name="PART_ElemGameStatus" Grid.RowSpan="3"
+                                     HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

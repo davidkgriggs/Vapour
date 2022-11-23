@@ -1,0 +1,8 @@
+AddonId: Vapour_dd1ccb2e-7025-4b6a-8b80-ddad9bdff48f
+Packages:
+  - Version: 1.0.0
+    RequiredApiVersion: 2.4.0
+    ReleaseDate: 2022-11-23
+    PackageUrl: https://github.com/davidkgriggs/Vapour/releases/download/v1.0.0/Vapour_dd1ccb2e-7025-4b6a-8b80-ddad9bdff48f_1_0_0.pthm
+    Changelog:
+      - Initial Release
