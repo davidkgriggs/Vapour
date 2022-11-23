@@ -9,6 +9,7 @@ Vapour is a Theme for Playnite that takes inspiration from Steam.
 ![](https://raw.githubusercontent.com/davidkgriggs/Vapour/main/Media/screenshot_03.jpg)
 
 ### Playnite Fullscreen Settings:
+Set Background Darken & Blur to 6.
 ![](https://raw.githubusercontent.com/davidkgriggs/Vapour/main/Media/screenshot_04.jpg)
 
 ### Plugins Supported:
